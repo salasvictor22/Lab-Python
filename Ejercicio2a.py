@@ -1,2 +1,7 @@
 from interpreter import draw
-from chessPictures import *
+from pieces import *
+from picture import *
+
+knight = Picture(KNIGHT)
+
+draw(knight.img)
