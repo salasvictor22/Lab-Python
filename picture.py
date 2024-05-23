@@ -44,13 +44,12 @@ class Picture:
     return Picture(None)
   
   def horizontalRepeat(self, n):
-    repeated_img = []
-    for line in self.img:
-      repeated_img.append(line * n)
+    repeated_img = [''.join([line] * n) for line in self.img]
     return Picture(repeated_img)
 
   def verticalRepeat(self, n):
-    return Picture(None)
+    repeated_img = self.img * n
+    return Picture(repeated_img)
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
