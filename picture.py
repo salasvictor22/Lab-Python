@@ -26,7 +26,7 @@ class Picture:
     return Picture(horizontal)
 
   def negative(self):
-    """ Devuelve un negativo de la imagen """
+    self.img = [''.join([self._invColor(char) for char in line]) for line in self.img]
     return Picture(None)
 
   def join(self, p):
