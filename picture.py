@@ -22,7 +22,7 @@ class Picture:
     """ Devuelve el espejo horizontal de la imagen """
     horizontal = []
     for line in self.img:
-        horizontal.append(line[::-1])
+      horizontal.append(line[::-1])
     return Picture(horizontal)
 
   def negative(self):
@@ -30,12 +30,15 @@ class Picture:
     return Picture(None)
 
   def join(self, p):
-    """ Devuelve una nueva figura poniendo la figura del argumento 
-        al lado derecho de la figura actual """
-    return Picture(None)
+    max_height = max(len(self.img), len(p.img))
+    img1 = self.img + [''] * (max_height - len(self.img))
+    img2 = p.img + [''] * (max_height - len(p.img))
+    joined_img = [line1 + line2 for line1, line2 in zip(img1, img2)]
+    return Picture(joined_img)
 
   def up(self, p):
-    return Picture(None)
+    joined_img = self.img + p.img
+    return Picture(joined_img)
 
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la

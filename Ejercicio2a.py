@@ -4,8 +4,10 @@ from picture import *
 
 
 knight = Picture(KNIGHT)
-knight.negative()
-draw(knight.img)
+knight_Black = Picture(KNIGHT)
+knight_Black.negative()
 
+combined_knights = knight.join(knight_Black)
+draw(combined_knights.img)
 
 
