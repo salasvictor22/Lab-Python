@@ -12,7 +12,6 @@ class Picture:
     return inverter[color]
 
   def verticalMirror(self):
-    """ Devuelve el espejo vertical de la imagen """
     vertical = []
     for value in reversed(self.img):
         vertical.append(value)
@@ -45,9 +44,10 @@ class Picture:
     return Picture(None)
   
   def horizontalRepeat(self, n):
-    """ Devuelve una nueva figura repitiendo la figura actual al costado
-        la cantidad de veces que indique el valor de n """
-    return Picture(None)
+    repeated_img = []
+    for line in self.img:
+      repeated_img.append(line * n)
+    return Picture(repeated_img)
 
   def verticalRepeat(self, n):
     return Picture(None)
