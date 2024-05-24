@@ -3,8 +3,7 @@ from pieces import *
 from picture import *
 
 knight = Picture(KNIGHT)
-knight_Black = Picture(KNIGHT)
-knight_Black.negative()
+knight_Black = Picture(KNIGHT).negative()
 combined_knights = knight.join(knight_Black)
 combined_knights2 = knight_Black.join(knight)
 image = combined_knights.up(combined_knights2)

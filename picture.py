@@ -25,7 +25,7 @@ class Picture:
 
   def negative(self):
     self.img = [''.join([self._invColor(char) for char in line]) for line in self.img]
-    return Picture(None)
+    return self
 
   def join(self, p):
     max_height = max(len(self.img), len(p.img))
@@ -39,9 +39,11 @@ class Picture:
     return Picture(joined_img)
 
   def under(self, p):
-    """ Devuelve una nueva figura poniendo la figura p sobre la
-        figura actual """
-    return Picture(None)
+    combined_img = []
+    for line_self, line_p in zip(self.img, p.img):
+        combined_line = ''.join(char_p if char_p != ' ' else char_self for char_self, char_p in zip(line_self, line_p))
+        combined_img.append(combined_line)
+    return Picture(combined_img)
   
   def horizontalRepeat(self, n):
     repeated_img = [''.join([line] * n) for line in self.img]
