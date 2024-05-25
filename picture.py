@@ -28,12 +28,9 @@ class Picture:
     return self
 
   def join(self, p):
-    max_height = max(len(self.img), len(p.img))
-    img1 = self.img + [''] * (max_height - len(self.img))
-    img2 = p.img + [''] * (max_height - len(p.img))
-    joined_img = [line1 + line2 for line1, line2 in zip(img1, img2)]
+    joined_img = [line1 + line2 for line1, line2 in zip(self.img, p.img)]
     return Picture(joined_img)
-
+   
   def up(self, p):
     joined_img = self.img + p.img
     return Picture(joined_img)
